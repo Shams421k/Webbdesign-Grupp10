@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Gym - Klasser</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- Sidhuvud -->
+    <header>
+        <div class="container">
+            <!-- Navigationsmeny -->
+            <nav>
+                <a href="index.html" class="logo">Apex Gym</a>
+                <!-- Hamburgermeny för mobil -->
+                <div class="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <!-- Navigationslänkar -->
+                <ul class="nav-links">
+                    <li><a href="index.html">Hem</a></li>
+                    <li><a href="membership.html">Medlemskap</a></li>
+                    <li><a href="classes.html" class="active">Klasser</a></li>
+                    <li><a href="blog.html">Blogg</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Huvudinnehåll -->
+    <main>
+        <!-- Klasser -->
+        <section id="class-types">
+            <div class="container">
+                <div class="main-content">
+                    <h1>Våra Klasser</h1>
+                    <p>Hitta den perfekta klassen för att nå dina träningsmål. Vi erbjuder en mängd olika klasser för alla träningsnivåer.</p>
+                </div>
+
+                <div class="class-grid">
+                    <!-- Styrkeklasser -->
+                    <div class="class-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Styrketräning" alt="En person som lyfter vikter.">
+                        <div class="class-content">
+                            <h3>Styrkeklasser</h3>
+                            <p>Våra styrkeklasser fokuserar på att bygga muskler och öka kraften. Vi använder en kombination av fria vikter, maskiner och kroppsviktsövningar för att hjälpa dig att nå dina mål. Passar alla nivåer.</p>
+                        </div>
+                    </div>
+                    <!-- Konditionsklasser -->
+                    <div class="class-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Konditionsträning" alt="En person som springer på ett löpband.">
+                        <div class="class-content">
+                            <h3>Konditionsklasser</h3>
+                            <p>Få pulsen att slå med våra högintensiva konditionsklasser. Från spinning till HIIT har vi en mängd olika alternativ för att förbättra din kardiovaskulära hälsa och uthållighet.</p>
+                        </div>
+                    </div>
+                    <!-- Gruppklasser -->
+                    <div class="class-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Gruppträning" alt="En grupp människor i en yogaklass.">
+                        <div class="class-content">
+                            <h3>Gruppklasser</h3>
+                            <p>Gå med i vår gemenskap i en rolig och motiverande gruppmiljö. Vi erbjuder ett brett utbud av klasser, inklusive Yoga, Zumba och Pilates, ledda av våra certifierade instruktörer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sidfot -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Apex Gym. Alla rättigheter förbehållna.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript för hamburgermeny -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Gym - Medlemskap</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- Sidhuvud -->
+    <header>
+        <div class="container">
+            <!-- Navigationsmeny -->
+            <nav>
+                <a href="index.html" class="logo">Apex Gym</a>
+                <!-- Hamburgermeny för mobil -->
+                <div class="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <!-- Navigationslänkar -->
+                <ul class="nav-links">
+                    <li><a href="index.html">Hem</a></li>
+                    <li><a href="membership.html" class="active">Medlemskap</a></li>
+                    <li><a href="classes.html">Klasser</a></li>
+                    <li><a href="blog.html">Blogg</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Huvudinnehåll -->
+    <main>
+        <!-- Medlemskapsplaner -->
+        <section id="membership-plans">
+            <div class="container">
+                <div class="main-content">
+                    <h1>🏋️‍♂️ Medlemskapsnivåer</h1>
+                    <p>Välj det medlemskap som passar dig bäst. Alla medlemskap ger full tillgång till våra anläggningar.</p>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Ungdomskort -->
+                    <div class="pricing-card">
+                        <img src="images/images (3).jpg" alt="Ungdom som tränar." class="pricing-img">
+                        <div class="pricing-card-content">
+                        <h3>Ungdom</h3>
+                        <p class="price">299 kr<span>/månad</span></p>
+                        <ul>
+                            <li>Gym Access</li>
+                            <li>Workout App</li>
+                            <li>Staffed Hours</li>
+                        </ul>
+                        <a href="#" class="cta-button">Bli medlem</a>
+                    </div>
+                    </div>
+
+                    <!-- Studentkort -->
+                    <div class="pricing-card">
+                        <img src="images/istockphoto-2027278927-612x612.jpg" alt="Student som tränar." class="pricing-img">
+                        <div class="pricing-card-content">
+                        <h3>Student</h3>
+                        <p class="price">349 kr<span>/månad</span></p>
+                        <ul>
+                            <li>Gym Access</li>
+                            <li>Workout App</li>
+                            <li>24/7 Access</li>
+                            <li>1 Guest/mo</li>
+                            <li>Wi-Fi & Lounge</li>
+                        </ul>
+                        <a href="#" class="cta-button">Bli medlem</a>
+                    </div>
+                    </div>
+
+                    <!-- Seniorkort -->
+                    <div class="pricing-card">
+                        <img src="images/istockphoto-1438034462-612x612.jpg" alt="Senior som tränar." class="pricing-img">
+                        <div class="pricing-card-content">
+                        <h3>Senior</h3>
+                        <p class="price">379 kr<span>/månad</span></p>
+                        <ul>
+                            <li>Gym Access</li>
+                            <li>24/7 Access</li>
+                            <li>Senior Classes</li>
+                            <li>Free Coffee</li>
+                            <li>Health Check</li>
+                        </ul>
+                        <a href="#" class="cta-button">Bli medlem</a>
+                    </div>
+                    </div>
+                    
+                    <!-- Standardkort -->
+                    <div class="pricing-card">
+                        <img src="images/pexels-willpicturethis-1954524.jpg" alt="Person som tränar." class="pricing-img">
+                        <div class="pricing-card-content">
+                        <h3>Standard</h3>
+                        <p class="price">399 kr<span>/månad</span></p>
+                        <ul>
+                            <li>Gym Access</li>
+                            <li>24/7 Access</li>
+                            <li>Basic Classes</li>
+                        </ul>
+                        <a href="#" class="cta-button">Bli medlem</a>
+                    </div>
+                    </div>
+
+                    <!-- Premiumkort -->
+                    <div class="pricing-card featured">
+                        <img src="images/istockphoto-2075354173-612x612.jpg" alt="Person som tränar intensivt." class="pricing-img">
+                        <div class="pricing-card-content">
+                        <h3>Premium</h3>
+                        <p class="price">529 kr<span>/månad</span></p>
+                        <ul>
+                            <li>24/7 Access</li>
+                            <li>Unlimited Classes</li>
+                            <li>3 PT/mo</li>
+                            <li>Recovery Zone</li>
+                        </ul>
+                        <a href="#" class="cta-button">Bli medlem</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sidfot -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Apex Gym. Alla rättigheter förbehållna.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript för hamburgermeny -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

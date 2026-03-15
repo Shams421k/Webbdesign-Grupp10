@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Variabler för färger och typsnitt */
+:root {
+    --primary-color: #e50914; /* Red */
+    --secondary-color: #007bff; /* Blue */
+    --dark-bg: #121212;
+    --light-bg: #1f1f1f;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+}
+
+/* Grundläggande stilar */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+h1, h2, h3 {
+    color: var(--text-primary);
+}
+
+/* Sidhuvud och navigationsmeny */
+header {
+    background-color: var(--light-bg);
+    padding: 1rem 0;
+    border-bottom: 3px solid var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+nav .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-primary);
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Huvudinnehåll */
+main {
+    padding: 2rem 0;
+    min-height: calc(100vh - 200px); /* Justera baserat på sidhuvud/sidfot höjd */
+}
+
+/* Hero-sektion */
+#hero {
+    text-align: center;
+    padding: 7rem 1rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/gym-interior-background-of-dumbbells-on-rack-in-fitness-and-workout-room-photo.jpg') no-repeat center center/cover;
+    color: var(--text-primary);
+}
+
+#hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#hero p {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* CTA-knapp */
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+}
+
+.cta-button:hover {
+    background-color: #ff3c5b;
+    transform: translateY(-3px);
+}
+
+/* Om oss-sektion */
+#about {
+    padding: 4rem 0;
+    background-color: var(--dark-bg);
+}
+
+#about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+#about p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* Galleri-sektion */
+#gallery {
+    padding: 4rem 0;
+}
+
+#gallery h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Medlemskapssida */
+#membership-plans .main-content{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.pricing-card {
+    background-color: var(--light-bg);
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 0;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-card .pricing-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.pricing-card-content {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-card.featured {
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(229, 9, 20, 0.5);
+}
+
+.pricing-card h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.pricing-card .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.pricing-card .price span {
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--text-secondary);
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.pricing-card ul li {
+    margin-bottom: 0.8rem;
+}
+
+
+/* Klasser-sida */
+#class-types .main-content {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.class-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.class-card {
+    background-color: var(--light-bg);
+    border: 1px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.class-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.class-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.class-card .class-content {
+    padding: 1.5rem;
+}
+
+.class-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Blog Section */
+#recent-posts, #blog-posts {
+    padding: 4rem 0;
+}
+
+#recent-posts h2, #blog-posts .main-content h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+#blog-posts .main-content p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-card {
+    background-color: var(--light-bg);
+    border: 1px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 1.5rem;
+}
+
+.blog-content h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    color: var(--secondary-color);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: var(--primary-color);
+}
+
+/* Contact Page */
+#contact-page .main-content {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.contact-details h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-details p {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: var(--text-primary);
+}
+
+.contact-form button {
+    width: 100%;
+    border: none;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--light-bg);
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid #333;
+}
+
+@media (max-width: 992px) {
+    .pricing-card.featured {
+        transform: scale(1); /* Disable scaling on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 70px; /* Adjust based on header height */
+        left: 0;
+        padding: 1rem 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .gallery-grid,
+    .pricing-grid,
+    .class-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    #hero p {
+        font-size: 1.1rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}

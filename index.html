@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Gym - Hem</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Sidhuvud -->
+    <header>
+        <div class="container">
+            <!-- Navigationsmeny -->
+            <nav>
+                <a href="index.html" class="logo">Apex Gym</a>
+                <!-- Hamburgermeny för mobil -->
+                <div class="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <!-- Navigationslänkar -->
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Hem</a></li>
+                    <li><a href="membership.html">Medlemskap</a></li>
+                    <li><a href="classes.html">Klasser</a></li>
+                    <li><a href="blog.html">Blogg</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Huvudinnehåll -->
+    <main>
+        <!-- Hero-sektion -->
+        <section id="hero">
+            <div class="container">
+                <h1>Välkommen till Apex Gym</h1>
+                <p>Din resa mot ett starkare, hälsosammare du börjar här i Borås.</p>
+                <a href="membership.html" class="cta-button">Bli medlem nu</a>
+            </div>
+        </section>
+
+        <!-- Om oss-sektion -->
+        <section id="about">
+            <div class="container">
+                <h2>Om vårt gym</h2>
+                <p>Apex Gym är ett toppmodernt fitnesscenter i hjärtat av Borås. Vi är dedikerade till att hjälpa våra medlemmar att nå sina träningsmål, oavsett om det handlar om att bygga styrka, förbättra konditionen eller hitta en stödjande gemenskap. Vår anläggning är utrustad med de senaste maskinerna, ett brett utbud av fria vikter och dedikerade ytor för gruppklasser.</p>
+            </div>
+        </section>
+
+        <!-- Senaste från bloggen-sektion -->
+        <section id="recent-posts">
+            <div class="container">
+                <h2>Senaste från bloggen</h2>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Blogginlägg+1" alt="En bild relaterad till det första blogginlägget.">
+                        <div class="blog-content">
+                            <h3>5 tips för att komma igång med träningen</h3>
+                            <p class="post-meta">Publicerad den 15 mars 2026</p>
+                            <p>Har du svårt att komma igång med träningen? Här är 5 enkla tips för att hjälpa dig på traven.</p>
+                            <a href="blog.html" class="read-more">Läs mer</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Blogginlägg+2" alt="En bild relaterad till det andra blogginlägget.">
+                        <div class="blog-content">
+                            <h3>Kosten som maximerar dina resultat</h3>
+                            <p class="post-meta">Publicerad den 10 mars 2026</p>
+                            <p>Lär dig hur du kan äta för att få ut det mesta av din träning och nå dina mål snabbare.</p>
+                            <a href="blog.html" class="read-more">Läs mer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galleri-sektion -->
+        <section id="gallery">
+            <div class="container">
+                <h2>Galleriet</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/400x300.png?text=Viktrum" alt="Ett foto av gymmet's viktrum.">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/400x300.png?text=Konditionsavdelning" alt="Ett foto av gymmet's konditionsavdelning.">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/400x300.png?text=Gruppklass" alt="Ett foto av en pågående gruppträningsklass.">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sidfot -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Apex Gym. Alla rättigheter förbehållna.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript för hamburgermeny -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Gym - Kontakt</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- Sidhuvud -->
+    <header>
+        <div class="container">
+            <!-- Navigationsmeny -->
+            <nav>
+                <a href="index.html" class="logo">Apex Gym</a>
+                <!-- Hamburgermeny för mobil -->
+                <div class="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <!-- Navigationslänkar -->
+                <ul class="nav-links">
+                    <li><a href="index.html">Hem</a></li>
+                    <li><a href="membership.html">Medlemskap</a></li>
+                    <li><a href="classes.html">Klasser</a></li>
+                    <li><a href="blog.html">Blogg</a></li>
+                    <li><a href="contact.html" class="active">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Huvudinnehåll -->
+    <main>
+        <!-- Kontaktsektion -->
+        <section id="contact-page">
+            <div class="container">
+                <div class="main-content">
+                    <h1>Kontakta oss</h1>
+                    <p>Vi är här för att hjälpa till. Skicka ett meddelande till oss eller besök oss på vår anläggning.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Kontaktinformation -->
+                    <div class="contact-details">
+                        <h3>Vår adress</h3>
+                        <p>Stora Torget 1, 503 30 Borås, Sverige</p>
+                        <h3>E-post</h3>
+                        <p>info@apexgym.se</p>
+                        <h3>Telefon</h3>
+                        <p>033-12 34 56</p>
+                    </div>
+                    <!-- Kontaktformulär -->
+                    <div class="contact-form">
+                        <form action="/contact" method="post">
+                            <div class="form-group">
+                                <label for="name">Namn</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-post</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Meddelande</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="cta-button">Skicka meddelande</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sidfot -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Apex Gym. Alla rättigheter förbehållna.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript för hamburgermeny -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

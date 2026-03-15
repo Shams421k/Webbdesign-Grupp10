@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Gym - Blogg</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- Sidhuvud -->
+    <header>
+        <div class="container">
+            <!-- Navigationsmeny -->
+            <nav>
+                <a href="index.html" class="logo">Apex Gym</a>
+                <!-- Hamburgermeny för mobil -->
+                <div class="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <!-- Navigationslänkar -->
+                <ul class="nav-links">
+                    <li><a href="index.html">Hem</a></li>
+                    <li><a href="membership.html">Medlemskap</a></li>
+                    <li><a href="classes.html">Klasser</a></li>
+                    <li><a href="blog.html" class="active">Blogg</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Huvudinnehåll -->
+    <main>
+        <!-- Blogginlägg -->
+        <section id="blog-posts">
+            <div class="container">
+                <div class="main-content">
+                    <h1>Vår Blogg</h1>
+                    <p>Här hittar du artiklar om träning, hälsa och allt däremellan.</p>
+                </div>
+
+                <div class="blog-grid">
+                    <!-- Blogginlägg 1 -->
+                    <div class="blog-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Blogginlägg+1" alt="En bild relaterad till det första blogginlägget.">
+                        <div class="blog-content">
+                            <h3>5 tips för att komma igång med träningen</h3>
+                            <p class="post-meta">Publicerad den 15 mars 2026</p>
+                            <p>Har du svårt att komma igång med träningen? Här är 5 enkla tips för att hjälpa dig på traven.</p>
+                            <a href="#" class="read-more">Läs mer</a>
+                        </div>
+                    </div>
+                    <!-- Blogginlägg 2 -->
+                    <div class="blog-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Blogginlägg+2" alt="En bild relaterad till det andra blogginlägget.">
+                        <div class="blog-content">
+                            <h3>Kosten som maximerar dina resultat</h3>
+                            <p class="post-meta">Publicerad den 10 mars 2026</p>
+                            <p>Lär dig hur du kan äta för att få ut det mesta av din träning och nå dina mål snabbare.</p>
+                            <a href="#" class="read-more">Läs mer</a>
+                        </div>
+                    </div>
+                    <!-- Blogginlägg 3 -->
+                    <div class="blog-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Blogginlägg+3" alt="En bild relaterad till det tredje blogginlägget.">
+                        <div class="blog-content">
+                            <h3>Varför vila är lika viktigt som träning</h3>
+                            <p class="post-meta">Publicerad den 5 mars 2026</p>
+                            <p>Många glömmer bort vikten av återhämtning. Vi förklarar varför vilodagar är avgörande för din framgång.</p>
+                            <a href="#" class="read-more">Läs mer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sidfot -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Apex Gym. Alla rättigheter förbehållna.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript för hamburgermeny -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
