@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
 
     if (menuToggle && navLinks) {
+        // Öppnar/stänger mobilmenyn
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const registrationPrice = document.querySelector('#registration-price');
 
     if (registrationForm && planSelect) {
+        // Priser per medlemsnivå
         const prices = {
             'Ungdom': 299,
             'Student': 349,
@@ -22,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'Premium': 529
         };
 
+        // Uppdaterar prisrutan när användaren väljer nivå
         const setPrice = () => {
             const plan = planSelect.value;
             const price = prices[plan];
@@ -35,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
+        // Läs ?plan=... och förvälj automatiskt
         const params = new URLSearchParams(window.location.search);
         const plan = params.get('plan');
         if (plan) planSelect.value = plan;
@@ -55,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             [nameInput, emailInput, messageInput].forEach(input => {
                 if (!input) return;
                 if (!input.value.trim()) {
+                    // Markera fält som fel ifyllda (hjälper vid tangentbord)
                     input.setAttribute('aria-invalid', 'true');
                     hasError = true;
                 } else {

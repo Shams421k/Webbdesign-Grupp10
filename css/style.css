@@ -82,14 +82,23 @@ nav ul li a {
     padding: 0.5rem 1rem;
     border-radius: 999px;
     border-bottom: 2px solid transparent;
-    transition: color 0.3s, border-bottom-color 0.3s, background-color 0.3s;
+    background-color: transparent;
+    color: var(--text-primary);
+    transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
     color: var(--text-primary);
-    border-bottom-color: var(--primary-color);
-    background-color: rgba(203, 153, 126, 0.22);
+    border-bottom-color: transparent;
+    background-color: var(--page-bg);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+}
+
+nav ul li a:focus-visible {
+    outline: 3px solid rgba(203, 153, 126, 0.55);
+    outline-offset: 3px;
 }
 
 .menu-toggle {
@@ -124,6 +133,7 @@ main {
     font-size: 4rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: #fbfefb;
 }
 
 #hero p {

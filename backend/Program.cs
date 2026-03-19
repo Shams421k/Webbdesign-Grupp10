@@ -20,12 +20,13 @@ app.UseRouting();
 // Enkel server-side hantering av kontaktformuläret
 app.MapPost("/contact", async (HttpContext context) =>
 {
+    // Läs in formulärdata från POST-begäran
     var form = await context.Request.ReadFormAsync();
     var name = form["name"].ToString().Trim();
     var email = form["email"].ToString().Trim();
     var message = form["message"].ToString().Trim();
 
-    // Enkel server-side validering (krav: alla fält måste vara ifyllda)
+    // Enkel server-side validering (alla fält måste vara ifyllda)
     if (string.IsNullOrWhiteSpace(name) ||
         string.IsNullOrWhiteSpace(email) ||
         string.IsNullOrWhiteSpace(message))
@@ -51,9 +52,7 @@ app.MapPost("/contact", async (HttpContext context) =>
         return;
     }
 
-    // Här skulle man normalt spara data eller skicka e-post
-
-    // Dynamisk HTML-respons med användarens data
+    // Skapa en dynamisk HTML-sida som svar på servern
     context.Response.ContentType = "text/html; charset=utf-8";
     await context.Response.WriteAsync(@$"
 <!DOCTYPE html>
@@ -81,6 +80,7 @@ app.MapPost("/contact", async (HttpContext context) =>
 // Enkel server-side hantering av medlemsregistrering
 app.MapPost("/register", async (HttpContext context) =>
 {
+    // Läs in registreringsdata från POST-begäran
     var form = await context.Request.ReadFormAsync();
     var name = form["name"].ToString().Trim();
     var email = form["email"].ToString().Trim();
@@ -88,6 +88,7 @@ app.MapPost("/register", async (HttpContext context) =>
     var plan = form["plan"].ToString().Trim();
     var payment = form["payment"].ToString().Trim();
 
+    // Enkel server-side validering (krav: allt måste vara ifyllt)
     if (string.IsNullOrWhiteSpace(name) ||
         string.IsNullOrWhiteSpace(email) ||
         string.IsNullOrWhiteSpace(phone) ||
