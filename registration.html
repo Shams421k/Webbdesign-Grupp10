@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrera medlemskap - Apex Gym</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Apex Gym</a>
+                <div class="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Hem</a></li>
+                    <li><a href="membership.html" class="active">Medlemskap</a></li>
+                    <li><a href="classes.html">Träningspass</a></li>
+                    <li><a href="blog.html">Blogg</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="registration">
+            <div class="container">
+                <div class="registration-panel">
+                    <h1>Registrera ditt medlemskap</h1>
+                    <p class="registration-lead">
+                        Fyll i uppgifterna nedan. När du klickar <strong>Betala</strong> skickas ansökan till servern.
+                    </p>
+
+                        <div id="registration-price" class="registration-price" aria-live="polite"></div>
+
+                    <form id="registration-form" action="/register" method="post" class="registration-form">
+                        <div class="form-group">
+                            <label for="reg-name">Namn</label>
+                            <input type="text" id="reg-name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-email">E-post</label>
+                            <input type="email" id="reg-email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-phone">Telefon</label>
+                            <input type="tel" id="reg-phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="plan">Medlemskap</label>
+                            <select id="plan" name="plan" required>
+                                <option value="">Välj nivå</option>
+                                <option value="Ungdom">Ungdom</option>
+                                <option value="Student">Student</option>
+                                <option value="Senior">Senior</option>
+                                <option value="Standard">Standard</option>
+                                <option value="Premium">Premium</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="payment">Betalsätt</label>
+                            <select id="payment" name="payment" required>
+                                <option value="">Välj betalsätt</option>
+                                <option value="Kort">Kort</option>
+                                <option value="Swish">Swish</option>
+                                <option value="Faktura">Faktura</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="cta-button registration-submit">Betala</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Apex Gym. Alla rättigheter förbehållna.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+

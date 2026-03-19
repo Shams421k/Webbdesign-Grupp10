@@ -23,7 +23,7 @@
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Hem</a></li>
                     <li><a href="membership.html">Medlemskap</a></li>
-                    <li><a href="classes.html">Klasser</a></li>
+                    <li><a href="classes.html">Träningspass</a></li>
                     <li><a href="blog.html">Blogg</a></li>
                     <li><a href="contact.html">Kontakt</a></li>
                 </ul>
@@ -44,8 +44,15 @@
         <!-- Om oss-sektion -->
         <section id="about">
             <div class="container">
-                <h2>Om vårt gym</h2>
-                <p>Apex Gym är ett toppmodernt fitnesscenter i hjärtat av Borås. Vi är dedikerade till att hjälpa våra medlemmar att nå sina träningsmål, oavsett om det handlar om att bygga styrka, förbättra konditionen eller hitta en stödjande gemenskap. Vår anläggning är utrustad med de senaste maskinerna, ett brett utbud av fria vikter och dedikerade ytor för gruppklasser.</p>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2>Om vårt gym</h2>
+                        <p>Apex Gym är ett toppmodernt fitnesscenter i hjärtat av Borås. Vi är dedikerade till att hjälpa våra medlemmar att nå sina träningsmål, oavsett om det handlar om att bygga styrka, förbättra konditionen eller hitta en stödjande gemenskap. Vår anläggning är utrustad med de senaste maskinerna, ett brett utbud av fria vikter och dedikerade ytor för gruppklasser.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/homepage.jpg" alt="Översiktsbild på Apex Gym med tränande medlemmar.">
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -55,21 +62,21 @@
                 <h2>Senaste från bloggen</h2>
                 <div class="blog-grid">
                     <div class="blog-card">
-                        <img src="https://via.placeholder.com/400x250.png?text=Blogginlägg+1" alt="En bild relaterad till det första blogginlägget.">
+                        <img src="images/5tips.jpg" alt="Person som knyter sina träningsskor inför ett pass.">
                         <div class="blog-content">
                             <h3>5 tips för att komma igång med träningen</h3>
                             <p class="post-meta">Publicerad den 15 mars 2026</p>
                             <p>Har du svårt att komma igång med träningen? Här är 5 enkla tips för att hjälpa dig på traven.</p>
-                            <a href="blog.html" class="read-more">Läs mer</a>
+                        <a href="blog-5-tips.html" class="read-more">Läs mer</a>
                         </div>
                     </div>
                     <div class="blog-card">
-                        <img src="https://via.placeholder.com/400x250.png?text=Blogginlägg+2" alt="En bild relaterad till det andra blogginlägget.">
+                        <img src="images/healthhy food.jpg" alt="En tallrik med hälsosam mat.">
                         <div class="blog-content">
                             <h3>Kosten som maximerar dina resultat</h3>
                             <p class="post-meta">Publicerad den 10 mars 2026</p>
                             <p>Lär dig hur du kan äta för att få ut det mesta av din träning och nå dina mål snabbare.</p>
-                            <a href="blog.html" class="read-more">Läs mer</a>
+                        <a href="blog-kost-resultat.html" class="read-more">Läs mer</a>
                         </div>
                     </div>
                 </div>
@@ -82,14 +89,32 @@
                 <h2>Galleriet</h2>
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="https://via.placeholder.com/400x300.png?text=Viktrum" alt="Ett foto av gymmet's viktrum.">
+                        <img src="images/young.jpg" alt="Ungdomar som tränar i gymmets viktrum.">
                     </div>
                     <div class="gallery-item">
-                        <img src="https://via.placeholder.com/400x300.png?text=Konditionsavdelning" alt="Ett foto av gymmet's konditionsavdelning.">
+                        <img src="images/conditiontraining.jpg" alt="Konditionsavdelningen med löpband och cyklar.">
                     </div>
                     <div class="gallery-item">
-                        <img src="https://via.placeholder.com/400x300.png?text=Gruppklass" alt="Ett foto av en pågående gruppträningsklass.">
+                        <img src="images/grupptraining.jpg" alt="En pågående gruppträningsklass på Apex Gym.">
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Om oss - kontaktinfo -->
+        <section id="home-info">
+            <div class="container">
+                <div class="home-info-panel">
+                    <h2>Besök oss</h2>
+                    <p class="home-info-text">
+                        <strong>Adress:</strong> Järnvägsgatan 8, 506 34 Borås<br>
+                        <strong>Telefon:</strong> 033-12 34 56<br>
+                        <strong>E-post:</strong> info@apexgym.se
+                    </p>
+                    <p class="home-info-text">
+                        <strong>Öppettider:</strong> Mån–Fre 06:00–22:00, Lör–Sön 09:00–18:00
+                    </p>
+                    <a href="contact.html" class="cta-button">Kontakta oss</a>
                 </div>
             </div>
         </section>
@@ -102,14 +127,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript för hamburgermeny -->
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>

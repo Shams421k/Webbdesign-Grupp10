@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex Gym - Klasser</title>
+    <title>Apex Gym - Träningspass</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<!-- Sidhuvud -->
+
+<body>
+    <!-- Sidhuvud -->
     <header>
         <div class="container">
-            <!-- Navigationsmeny -->
             <nav>
                 <a href="index.html" class="logo">Apex Gym</a>
-                <!-- Hamburgermeny för mobil -->
                 <div class="menu-toggle">
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
                 </div>
-                <!-- Navigationslänkar -->
                 <ul class="nav-links">
                     <li><a href="index.html">Hem</a></li>
                     <li><a href="membership.html">Medlemskap</a></li>
-                    <li><a href="classes.html" class="active">Klasser</a></li>
+                    <li><a href="classes.html" class="active">Träningspass</a></li>
                     <li><a href="blog.html">Blogg</a></li>
                     <li><a href="contact.html">Kontakt</a></li>
                 </ul>
@@ -30,42 +29,69 @@
         </div>
     </header>
 
-    <!-- Huvudinnehåll -->
     <main>
-        <!-- Klasser -->
-        <section id="class-types">
+        <section id="training-passes">
             <div class="container">
-                <div class="main-content">
-                    <h1>Våra Klasser</h1>
-                    <p>Hitta den perfekta klassen för att nå dina träningsmål. Vi erbjuder en mängd olika klasser för alla träningsnivåer.</p>
+                <div class="page-head">
+                    <h1>Träningspass</h1>
+                    <p>Välj ett pass som passar din nivå och ditt schema. Här nedan hittar du tider, innehåll och hur du anmäler dig.</p>
                 </div>
 
-                <div class="class-grid">
-                    <!-- Styrkeklasser -->
-                    <div class="class-card">
-                        <img src="https://via.placeholder.com/400x250.png?text=Styrketräning" alt="En person som lyfter vikter.">
-                        <div class="class-content">
-                            <h3>Styrkeklasser</h3>
-                            <p>Våra styrkeklasser fokuserar på att bygga muskler och öka kraften. Vi använder en kombination av fria vikter, maskiner och kroppsviktsövningar för att hjälpa dig att nå dina mål. Passar alla nivåer.</p>
-                        </div>
+                <!-- Rad 1: bild vänster, text höger -->
+                <article class="pass-row">
+                    <img class="pass-image" src="images/strenghttraining.jpg" alt="Styrketräningspass i gymmet med tränare och deltagare.">
+                    <div class="pass-content">
+                        <h2>Styrketräning</h2>
+                        <p>Bygg muskler och styrka med tydligt upplägg och fokus på teknik. Passet passar både nybörjare och vana.</p>
+                        <ul class="pass-meta">
+                            <li><strong>Tider (exempel):</strong> Måndag 18:00</li>
+                            <li><strong>Fokus:</strong> basövningar och progression</li>
+                        </ul>
+                        <a href="pass-styrka.html" class="cta-button">Läs mer</a>
                     </div>
-                    <!-- Konditionsklasser -->
-                    <div class="class-card">
-                        <img src="https://via.placeholder.com/400x250.png?text=Konditionsträning" alt="En person som springer på ett löpband.">
-                        <div class="class-content">
-                            <h3>Konditionsklasser</h3>
-                            <p>Få pulsen att slå med våra högintensiva konditionsklasser. Från spinning till HIIT har vi en mängd olika alternativ för att förbättra din kardiovaskulära hälsa och uthållighet.</p>
-                        </div>
+                </article>
+
+                <!-- Rad 2: bild höger, text vänster -->
+                <article class="pass-row reverse">
+                    <img class="pass-image" src="images/conditiontraining.jpg" alt="Konditionsträning med deltagare på gymmets maskiner.">
+                    <div class="pass-content">
+                        <h2>Konditionsträning</h2>
+                        <p>Höj pulsen och förbättra uthålligheten med intervaller. Vi anpassar intensiteten efter gruppens nivå.</p>
+                        <ul class="pass-meta">
+                            <li><strong>Tider (exempel):</strong> Tisdag 18:30</li>
+                            <li><strong>Fokus:</strong> intervaller och flås</li>
+                        </ul>
+                        <a href="pass-kondition.html" class="cta-button">Läs mer</a>
                     </div>
-                    <!-- Gruppklasser -->
-                    <div class="class-card">
-                        <img src="https://via.placeholder.com/400x250.png?text=Gruppträning" alt="En grupp människor i en yogaklass.">
-                        <div class="class-content">
-                            <h3>Gruppklasser</h3>
-                            <p>Gå med i vår gemenskap i en rolig och motiverande gruppmiljö. Vi erbjuder ett brett utbud av klasser, inklusive Yoga, Zumba och Pilates, ledda av våra certifierade instruktörer.</p>
-                        </div>
+                </article>
+
+                <!-- Rad 3: bild vänster, text höger -->
+                <article class="pass-row">
+                    <img class="pass-image" src="images/yoga.jpg" alt="Yoga på en matta med mjuka rörelser och fokus på andning.">
+                    <div class="pass-content">
+                        <h2>Yoga</h2>
+                        <p>Stärk rörlighet, balans och återhämtning. Här jobbar vi med andning, teknik och hållningar som passar alla.</p>
+                        <ul class="pass-meta">
+                            <li><strong>Tider (exempel):</strong> Fredag 18:00</li>
+                            <li><strong>Fokus:</strong> rörlighet och hållbarhet</li>
+                        </ul>
+                        <a href="pass-yoga.html" class="cta-button">Läs mer</a>
                     </div>
-                </div>
+                </article>
+
+                <!-- Rad 4: bild höger, text vänster -->
+                <article class="pass-row reverse">
+                    <img class="pass-image" src="images/gym group training class.jpg" alt="Gruppträningspass med tränare och deltagare i en motiverande sal.">
+                    <div class="pass-content">
+                        <h2>Gruppträning</h2>
+                        <p>Träna tillsammans och håll energin uppe. Passet är lekfullt, utmanande och alltid med tydlig ledning.</p>
+                        <ul class="pass-meta">
+                            <li><strong>Tider (exempel):</strong> Onsdag 18:00</li>
+                            <li><strong>Fokus:</strong> gemenskap och allsidig träning</li>
+                        </ul>
+                        <a href="pass-grupptraning.html" class="cta-button">Läs mer</a>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
@@ -77,14 +103,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript för hamburgermeny -->
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
