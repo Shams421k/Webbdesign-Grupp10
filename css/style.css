@@ -786,8 +786,13 @@ footer {
 
     .gallery-grid,
     .pricing-grid,
-    .class-grid {
+    .class-grid,
+    .blog-grid {
         grid-template-columns: 1fr;
+    }
+
+    .blog-article {
+        padding: 1.5rem;
     }
 
     .contact-hero {
