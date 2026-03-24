@@ -450,7 +450,7 @@ main {
     color: var(--text-primary);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .pass-row {
         flex-direction: column;
         gap: 1.2rem;
