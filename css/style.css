@@ -450,7 +450,7 @@ main {
     color: var(--text-primary);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .pass-row {
         flex-direction: column;
         gap: 1.2rem;
@@ -751,7 +751,7 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     h1 {
         font-size: 2.5rem;
     }

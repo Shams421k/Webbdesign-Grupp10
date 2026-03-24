@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
     const navItems = navLinks ? Array.from(navLinks.querySelectorAll('a[href]')) : [];
     const scrollBehavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
-    const isMobileView = () => window.matchMedia('(max-width: 768px)').matches;
+    const isMobileView = () => window.matchMedia('(max-width: 992px)').matches;
 
     const focusAndCenter = (element) => {
         if (!element) return;
