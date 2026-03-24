@@ -16,6 +16,17 @@
     --text-secondary: #5a5a5a;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 /* Grundläggande stilar */
 body {
     font-family: 'Roboto', sans-serif;
@@ -414,7 +425,8 @@ main {
 }
 
 .pass-image {
-    width: 45%;
+    flex: 0 0 42%;
+    width: auto;
     height: 320px;
     object-fit: cover;
     border-radius: 14px;
@@ -422,7 +434,9 @@ main {
 }
 
 .pass-content {
-    width: 55%;
+    flex: 1;
+    width: auto;
+    min-width: 0;
 }
 
 .pass-content h2 {
