@@ -37,6 +37,17 @@ a {
     transition: color 0.3s;
 }
 
+/* Tydlig fokusmarkering för tangentbordsnavigering */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid rgba(203, 153, 126, 0.65);
+    outline-offset: 3px;
+}
+
 h1, h2, h3 {
     color: var(--text-primary);
 }
@@ -729,7 +740,7 @@ footer {
     }
 
     nav ul {
-        display: flex;
+        display: none;
         flex-direction: column;
         width: 100%;
         background-color: var(--header-bg);

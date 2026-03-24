@@ -3,9 +3,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
 
     if (menuToggle && navLinks) {
+        // Gör mobilmenyn tangentbordsnavigerbar trots att elementet är en div.
+        menuToggle.setAttribute('role', 'button');
+        menuToggle.setAttribute('tabindex', '0');
+        menuToggle.setAttribute('aria-label', 'Öppna eller stäng navigationsmenyn');
+        menuToggle.setAttribute('aria-expanded', 'false');
+
+        const toggleMenu = () => {
+            const isOpen = navLinks.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+        };
+
         // Öppnar/stänger mobilmenyn
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        menuToggle.addEventListener('click', toggleMenu);
+        menuToggle.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleMenu();
+            }
         });
     }
 
