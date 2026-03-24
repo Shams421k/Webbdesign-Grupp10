@@ -1,6 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
+    const navItems = navLinks ? Array.from(navLinks.querySelectorAll('a[href]')) : [];
+    const scrollBehavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    const isMobileView = () => window.matchMedia('(max-width: 768px)').matches;
+
+    const focusAndCenter = (element) => {
+        if (!element) return;
+        element.focus({ preventScroll: true });
+        element.scrollIntoView({
+            behavior: scrollBehavior,
+            block: 'center',
+            inline: 'nearest'
+        });
+    };
 
     if (menuToggle && navLinks) {
         // Gör mobilmenyn tangentbordsnavigerbar trots att elementet är en div.
@@ -8,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.setAttribute('tabindex', '0');
         menuToggle.setAttribute('aria-label', 'Öppna eller stäng navigationsmenyn');
         menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-controls', 'primary-nav-links');
+        navLinks.id = 'primary-nav-links';
 
         const toggleMenu = () => {
             const isOpen = navLinks.classList.toggle('active');
@@ -20,9 +35,156 @@ document.addEventListener('DOMContentLoaded', () => {
             if (event.key === 'Enter' || event.key === ' ') {
                 event.preventDefault();
                 toggleMenu();
+                return;
+            }
+
+            if (event.key === 'ArrowUp') {
+                event.preventDefault();
+                if (!navLinks.classList.contains('active')) {
+                    toggleMenu();
+                }
+                const visibleNavItems = navItems.filter((item) => item.offsetParent !== null);
+                if (!visibleNavItems.length) return;
+                focusAndCenter(visibleNavItems[visibleNavItems.length - 1]);
             }
         });
+
     }
+
+    // Globalt tangentbordsstöd för hela sajten:
+    // - Piltangenter flyttar fokus mellan interaktiva element
+    // - Enter aktiverar fokuserat element (som vänsterklick)
+    const isTypingContext = (element) => {
+        if (!element) return false;
+        const tag = element.tagName;
+        return (
+            element.isContentEditable ||
+            tag === 'INPUT' ||
+            tag === 'TEXTAREA' ||
+            tag === 'SELECT'
+        );
+    };
+
+    const isVisible = (element) => {
+        if (!element) return false;
+        const styles = window.getComputedStyle(element);
+        if (styles.display === 'none' || styles.visibility === 'hidden') return false;
+        return element.getClientRects().length > 0;
+    };
+
+    const getInteractiveElements = () => {
+        const selector = [
+            'a[href]',
+            'button:not([disabled])',
+            'input:not([disabled]):not([type="hidden"])',
+            'select:not([disabled])',
+            'textarea:not([disabled])',
+            '[role="button"]',
+            '[role="link"]',
+            '[tabindex]:not([tabindex="-1"])'
+        ].join(', ');
+
+        return Array.from(document.querySelectorAll(selector)).filter(isVisible);
+    };
+
+
+    document.addEventListener('keydown', (event) => {
+        const activeElement = document.activeElement;
+        const key = event.key;
+
+        if (isTypingContext(activeElement)) return;
+
+        const isArrowKey = key === 'ArrowRight' || key === 'ArrowDown' || key === 'ArrowLeft' || key === 'ArrowUp';
+        const isHorizontalArrow = key === 'ArrowLeft' || key === 'ArrowRight';
+        const visibleNavItems = navItems.filter(isVisible);
+        const isFocusOnMenuToggle = menuToggle && activeElement === menuToggle;
+        const navIndex = visibleNavItems.indexOf(activeElement);
+        const isFocusInVisibleNav = navIndex !== -1;
+        const noMeaningfulFocus =
+            activeElement === document.body || activeElement === document.documentElement;
+
+        if (key === 'Escape' && menuToggle && navLinks && navLinks.classList.contains('active')) {
+            event.preventDefault();
+            navLinks.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            focusAndCenter(menuToggle);
+            return;
+        }
+
+        if (isHorizontalArrow && visibleNavItems.length) {
+            if (isFocusInVisibleNav || noMeaningfulFocus) {
+                event.preventDefault();
+                const currentNavIndex = navIndex === -1 ? 0 : navIndex;
+                const nextNavIndex = key === 'ArrowRight'
+                    ? (currentNavIndex + 1) % visibleNavItems.length
+                    : (currentNavIndex - 1 + visibleNavItems.length) % visibleNavItems.length;
+                focusAndCenter(visibleNavItems[nextNavIndex]);
+                return;
+            }
+        }
+
+        if (
+            isMobileView() &&
+            (key === 'ArrowDown' || key === 'ArrowUp') &&
+            visibleNavItems.length &&
+            (isFocusInVisibleNav || isFocusOnMenuToggle)
+        ) {
+            event.preventDefault();
+
+            if (isFocusOnMenuToggle && key === 'ArrowDown') {
+                focusAndCenter(visibleNavItems[0]);
+                return;
+            }
+
+            if (isFocusOnMenuToggle && key === 'ArrowUp') {
+                focusAndCenter(visibleNavItems[visibleNavItems.length - 1]);
+                return;
+            }
+
+            if (key === 'ArrowUp' && isFocusInVisibleNav && navIndex === 0 && isVisible(menuToggle)) {
+                focusAndCenter(menuToggle);
+                return;
+            }
+
+            const currentNavIndex = navIndex === -1 ? 0 : navIndex;
+            const nextNavIndex = key === 'ArrowDown'
+                ? (currentNavIndex + 1) % visibleNavItems.length
+                : (currentNavIndex - 1 + visibleNavItems.length) % visibleNavItems.length;
+            focusAndCenter(visibleNavItems[nextNavIndex]);
+            return;
+        }
+
+        if (key === 'ArrowDown' || key === 'ArrowUp') {
+            const interactiveElements = getInteractiveElements();
+            if (!interactiveElements.length) return;
+
+            let currentIndex = interactiveElements.indexOf(activeElement);
+
+            if (currentIndex === -1) {
+                const startIndex = key === 'ArrowDown' ? 0 : interactiveElements.length - 1;
+                event.preventDefault();
+                focusAndCenter(interactiveElements[startIndex]);
+                return;
+            }
+
+            const nextIndex = key === 'ArrowDown'
+                ? (currentIndex + 1) % interactiveElements.length
+                : (currentIndex - 1 + interactiveElements.length) % interactiveElements.length;
+            event.preventDefault();
+            focusAndCenter(interactiveElements[nextIndex]);
+            return;
+        }
+
+        if (key === 'Enter' && activeElement && activeElement !== document.body) {
+            const isClickable =
+                activeElement.matches('a[href], button, [role="button"], [role="link"], input[type="submit"], input[type="button"]');
+
+            if (isClickable) {
+                event.preventDefault();
+                activeElement.click();
+            }
+        }
+    });
 
     // Registration: förvälj medlemsnivå baserat på query-parametern "?plan=..."
     const registrationForm = document.querySelector('#registration-form');

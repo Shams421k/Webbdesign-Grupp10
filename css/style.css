@@ -99,11 +99,13 @@ nav ul li a {
 }
 
 nav ul li a:hover,
-nav ul li a.active {
+nav ul li a.active,
+nav ul li a:focus,
+nav ul li a:focus-visible {
     color: var(--text-primary);
     border-bottom-color: transparent;
     background-color: var(--page-bg);
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 0 3px rgba(203, 153, 126, 0.45);
     transform: translateY(-1px);
 }
 
@@ -112,10 +114,21 @@ nav ul li a:focus-visible {
     outline-offset: 3px;
 }
 
+.cta-button:focus,
+.cta-button:focus-visible,
+.read-more:focus,
+.read-more:focus-visible {
+    box-shadow: 0 0 0 3px rgba(203, 153, 126, 0.45);
+    border-radius: 8px;
+}
+
 .menu-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 10px;
+    transition: box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .menu-toggle .bar {
@@ -124,6 +137,14 @@ nav ul li a:focus-visible {
     background-color: var(--text-primary);
     margin: 4px 0;
     transition: 0.4s;
+}
+
+.menu-toggle:focus,
+.menu-toggle:focus-visible {
+    outline: 3px solid rgba(203, 153, 126, 0.7);
+    outline-offset: 3px;
+    background-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 0 3px rgba(203, 153, 126, 0.35);
 }
 
 /* Huvudinnehåll */
